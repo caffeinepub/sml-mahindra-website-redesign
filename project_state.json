@@ -1,0 +1,114 @@
+{
+  "schemaVersion": "1.0.0",
+  "projectStateVersion": 3,
+  "summary": "Redesign the SML Mahindra website (smlmahindra.com) with a modern, advanced, and fresh new look to replace the current outdated design.",
+  "architectural_notes": [
+    "Project is a website redesign inspired by smlmahindra.com — focus on modern, clean, advanced aesthetics",
+    "Retain core content sections from original site: products, about, dealers, contact"
+  ],
+  "known_issues": [],
+  "isFixRequest": false,
+  "imageRequirements": "## Required Images\n- Wide cinematic shot of a modern SML commercial bus or truck driving on a highway at dusk, dramatic sky, volumetric lighting, photorealistic style (hero-bg.dim_1920x1080.png)\n- Clean studio render of a white light commercial vehicle (LCV) on a dark background with subtle reflections (vehicle-lcv.dim_800x500.png)\n- Clean studio render of a modern school/staff bus in white and amber livery on dark background (vehicle-bus.dim_800x500.png)\n- Clean studio render of a heavy-duty truck in dark metallic finish on dark background (vehicle-truck.dim_800x500.png)\n- Abstract dark metallic geometric pattern — subtle texture for section background use (section-bg-texture.dim_1920x600.png)\n- Modern SML Mahindra brand logo mark — stylized 'SML' lettermark in amber on dark background (logo-mark.dim_256x256.png)",
+  "existing_features": [
+    {
+      "id": "feature-design-and-implement-a-bold-modern-visual-theme-across-the-entire-site-dark-charcoal-steel-base-palette-with-vibrant-amber-orange-accent-color-sharp-geometric-layout-premium-sans-serif-typography-smooth-scroll-animations-and-subtle-gradient-or-glassmorphism-card-effects-apply-the-theme-consistently-on-all-pages",
+      "title": "Design and implement a bold, modern visual theme across the entire site: dark charcoal/steel base palette with vibrant amber/orange accent color, sharp geometric layout, premium sans-serif typography, smooth scroll animations, and subtle gradient or glassmorphism card effects. Apply the theme consistently on all pages.",
+      "reqIds": [
+        "REQ-1"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-build-a-full-width-hero-section-on-the-homepage-with-a-large-background-image-gradient-a-bold-headline-about-sml-mahindra-s-commercial-vehicle-legacy-a-short-tagline-and-two-prominent-cta-buttons-explore-vehicles-and-find-a-dealer-include-an-animated-navigation-bar-that-becomes-opaque-on-scroll",
+      "title": "Build a full-width hero section on the homepage with a large background image/gradient, a bold headline about SML Mahindra's commercial vehicle legacy, a short tagline, and two prominent CTA buttons ('Explore Vehicles' and 'Find a Dealer'). Include an animated navigation bar that becomes opaque on scroll.",
+      "reqIds": [
+        "REQ-2"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-create-a-vehicle-catalog-section-showcasing-sml-mahindra-s-product-lineup-buses-trucks-light-commercial-vehicles-display-vehicles-in-a-responsive-grid-of-modern-cards-each-showing-a-vehicle-image-name-category-tag-and-a-view-details-button-clicking-a-card-opens-a-modal-or-detail-view-with-key-specifications",
+      "title": "Create a vehicle catalog section showcasing SML Mahindra's product lineup (buses, trucks, light commercial vehicles). Display vehicles in a responsive grid of modern cards, each showing a vehicle image, name, category tag, and a 'View Details' button. Clicking a card opens a modal or detail view with key specifications.",
+      "reqIds": [
+        "REQ-3"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-build-a-dealer-service-locator-section-where-users-can-enter-a-city-or-state-name-to-search-for-nearby-dealers-display-results-in-a-styled-list-with-dealer-name-address-phone-number-and-a-get-directions-link-store-dealer-data-name-city-state-address-phone-in-the-backend-and-expose-query-functions",
+      "title": "Build a dealer/service locator section where users can enter a city or state name to search for nearby dealers. Display results in a styled list with dealer name, address, phone number, and a 'Get Directions' link. Store dealer data (name, city, state, address, phone) in the backend and expose query functions.",
+      "reqIds": [
+        "REQ-4"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-add-an-about-us-section-highlighting-sml-mahindra-s-history-key-milestones-and-values-use-a-modern-timeline-layout-for-milestones-and-an-icon-grid-for-core-values-e-g-innovation-reliability-service",
+      "title": "Add an 'About Us' section highlighting SML Mahindra's history, key milestones, and values. Use a modern timeline layout for milestones and an icon-grid for core values (e.g., Innovation, Reliability, Service).",
+      "reqIds": [
+        "REQ-5"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-implement-a-contact-inquiry-form-that-captures-the-user-s-name-email-phone-number-subject-dropdown-sales-service-dealership-other-and-message-on-submission-store-the-inquiry-in-the-backend-and-show-a-success-confirmation-toast-message",
+      "title": "Implement a Contact & Inquiry form that captures the user's name, email, phone number, subject (dropdown: Sales, Service, Dealership, Other), and message. On submission, store the inquiry in the backend and show a success confirmation toast/message.",
+      "reqIds": [
+        "REQ-6"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-build-a-sticky-footer-with-sml-mahindra-branding-quick-navigation-links-home-vehicles-dealers-about-contact-social-media-icon-links-and-a-copyright-notice-style-it-with-the-dark-theme-and-amber-accent",
+      "title": "Build a sticky footer with SML Mahindra branding, quick navigation links (Home, Vehicles, Dealers, About, Contact), social media icon links, and a copyright notice. Style it with the dark theme and amber accent.",
+      "reqIds": [
+        "REQ-7"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-render-all-generated-images-as-static-assets-from-frontend-public-assets-generated-and-reference-them-throughout-the-ui-hero-background-vehicle-cards-about-section",
+      "title": "Render all generated images as static assets from frontend/public/assets/generated and reference them throughout the UI (hero background, vehicle cards, about section).",
+      "reqIds": [
+        "REQ-8"
+      ],
+      "version": 1
+    }
+  ],
+  "new_feature_requests": [
+    {
+      "id": "AR-1",
+      "summary": "Modern homepage redesign with fresh UI/UX",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-2",
+      "summary": "Vehicle catalog/product showcase section",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-3",
+      "summary": "Dealer/service locator feature",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-4",
+      "summary": "About us and company info section",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-5",
+      "summary": "Contact and inquiry form",
+      "reqIds": [],
+      "status": "pending"
+    }
+  ],
+  "gameProjectType": "none",
+  "projectName": "SML Mahindra Website Redesign",
+  "clarification_mode": "instant",
+  "clarification_rounds": 0
+}

@@ -1,0 +1,163 @@
+{
+  "kind": "feature_evidence_report",
+  "features": [
+    {
+      "featureId": "feature-design-and-implement-a-bold-modern-visual-theme-across-the-entire-site-dark-charcoal-steel-base-palette-with-vibrant-amber-orange-accent-color-sharp-geometric-layout-premium-sans-serif-typography-smooth-scroll-animations-and-subtle-gradient-or-glassmorphism-card-effects-apply-the-theme-consistently-on-all-pages",
+      "featureTitle": "Design and implement a bold, modern visual theme across the entire site: dark charcoal/steel base palette with vibrant amber/orange accent color, sharp geometric layout, premium sans-serif typography, smooth scroll animations, and subtle gradient or glassmorphism card effects. Apply the theme consistently on all pages.",
+      "files": [
+        "frontend/src/index.css",
+        "frontend/tailwind.config.js"
+      ],
+      "components": [
+        "core-infrastructure@1.0.2",
+        "shadcn-ui@1.0.0",
+        "build-template-react@1.0.0",
+        "initial-app@1.0.0",
+        "github-export-icp-cli@1.0.0"
+      ],
+      "testIds": [
+        "REQ-1"
+      ],
+      "confidence": "high"
+    },
+    {
+      "featureId": "feature-build-a-full-width-hero-section-on-the-homepage-with-a-large-background-image-gradient-a-bold-headline-about-sml-mahindra-s-commercial-vehicle-legacy-a-short-tagline-and-two-prominent-cta-buttons-explore-vehicles-and-find-a-dealer-include-an-animated-navigation-bar-that-becomes-opaque-on-scroll",
+      "featureTitle": "Build a full-width hero section on the homepage with a large background image/gradient, a bold headline about SML Mahindra's commercial vehicle legacy, a short tagline, and two prominent CTA buttons ('Explore Vehicles' and 'Find a Dealer'). Include an animated navigation bar that becomes opaque on scroll.",
+      "files": [
+        "frontend/src/App.tsx",
+        "frontend/src/components/Hero.tsx",
+        "frontend/src/components/Navbar.tsx"
+      ],
+      "components": [
+        "core-infrastructure@1.0.2",
+        "shadcn-ui@1.0.0",
+        "build-template-react@1.0.0",
+        "initial-app@1.0.0",
+        "github-export-icp-cli@1.0.0"
+      ],
+      "testIds": [
+        "REQ-2"
+      ],
+      "confidence": "high"
+    },
+    {
+      "featureId": "feature-create-a-vehicle-catalog-section-showcasing-sml-mahindra-s-product-lineup-buses-trucks-light-commercial-vehicles-display-vehicles-in-a-responsive-grid-of-modern-cards-each-showing-a-vehicle-image-name-category-tag-and-a-view-details-button-clicking-a-card-opens-a-modal-or-detail-view-with-key-specifications",
+      "featureTitle": "Create a vehicle catalog section showcasing SML Mahindra's product lineup (buses, trucks, light commercial vehicles). Display vehicles in a responsive grid of modern cards, each showing a vehicle image, name, category tag, and a 'View Details' button. Clicking a card opens a modal or detail view with key specifications.",
+      "files": [
+        "frontend/src/App.tsx",
+        "frontend/src/components/VehicleCard.tsx",
+        "frontend/src/components/VehicleCatalog.tsx",
+        "frontend/src/components/VehicleDetailModal.tsx"
+      ],
+      "components": [
+        "core-infrastructure@1.0.2",
+        "shadcn-ui@1.0.0",
+        "build-template-react@1.0.0",
+        "initial-app@1.0.0",
+        "github-export-icp-cli@1.0.0"
+      ],
+      "testIds": [
+        "REQ-3"
+      ],
+      "confidence": "high"
+    },
+    {
+      "featureId": "feature-build-a-dealer-service-locator-section-where-users-can-enter-a-city-or-state-name-to-search-for-nearby-dealers-display-results-in-a-styled-list-with-dealer-name-address-phone-number-and-a-get-directions-link-store-dealer-data-name-city-state-address-phone-in-the-backend-and-expose-query-functions",
+      "featureTitle": "Build a dealer/service locator section where users can enter a city or state name to search for nearby dealers. Display results in a styled list with dealer name, address, phone number, and a 'Get Directions' link. Store dealer data (name, city, state, address, phone) in the backend and expose query functions.",
+      "files": [
+        "frontend/src/App.tsx",
+        "frontend/src/components/DealerCard.tsx",
+        "frontend/src/components/DealerLocator.tsx"
+      ],
+      "components": [
+        "core-infrastructure@1.0.2",
+        "shadcn-ui@1.0.0",
+        "build-template-react@1.0.0",
+        "initial-app@1.0.0",
+        "github-export-icp-cli@1.0.0"
+      ],
+      "testIds": [
+        "REQ-4"
+      ],
+      "confidence": "high"
+    },
+    {
+      "featureId": "feature-add-an-about-us-section-highlighting-sml-mahindra-s-history-key-milestones-and-values-use-a-modern-timeline-layout-for-milestones-and-an-icon-grid-for-core-values-e-g-innovation-reliability-service",
+      "featureTitle": "Add an 'About Us' section highlighting SML Mahindra's history, key milestones, and values. Use a modern timeline layout for milestones and an icon-grid for core values (e.g., Innovation, Reliability, Service).",
+      "files": [
+        "frontend/src/App.tsx",
+        "frontend/src/components/AboutSection.tsx"
+      ],
+      "components": [
+        "core-infrastructure@1.0.2",
+        "shadcn-ui@1.0.0",
+        "build-template-react@1.0.0",
+        "initial-app@1.0.0",
+        "github-export-icp-cli@1.0.0"
+      ],
+      "testIds": [
+        "REQ-5"
+      ],
+      "confidence": "high"
+    },
+    {
+      "featureId": "feature-implement-a-contact-inquiry-form-that-captures-the-user-s-name-email-phone-number-subject-dropdown-sales-service-dealership-other-and-message-on-submission-store-the-inquiry-in-the-backend-and-show-a-success-confirmation-toast-message",
+      "featureTitle": "Implement a Contact & Inquiry form that captures the user's name, email, phone number, subject (dropdown: Sales, Service, Dealership, Other), and message. On submission, store the inquiry in the backend and show a success confirmation toast/message.",
+      "files": [
+        "frontend/src/App.tsx",
+        "frontend/src/components/ContactForm.tsx"
+      ],
+      "components": [
+        "core-infrastructure@1.0.2",
+        "shadcn-ui@1.0.0",
+        "build-template-react@1.0.0",
+        "initial-app@1.0.0",
+        "github-export-icp-cli@1.0.0"
+      ],
+      "testIds": [
+        "REQ-6"
+      ],
+      "confidence": "high"
+    },
+    {
+      "featureId": "feature-build-a-sticky-footer-with-sml-mahindra-branding-quick-navigation-links-home-vehicles-dealers-about-contact-social-media-icon-links-and-a-copyright-notice-style-it-with-the-dark-theme-and-amber-accent",
+      "featureTitle": "Build a sticky footer with SML Mahindra branding, quick navigation links (Home, Vehicles, Dealers, About, Contact), social media icon links, and a copyright notice. Style it with the dark theme and amber accent.",
+      "files": [
+        "frontend/src/App.tsx",
+        "frontend/src/components/Footer.tsx"
+      ],
+      "components": [
+        "core-infrastructure@1.0.2",
+        "shadcn-ui@1.0.0",
+        "build-template-react@1.0.0",
+        "initial-app@1.0.0",
+        "github-export-icp-cli@1.0.0"
+      ],
+      "testIds": [
+        "REQ-7"
+      ],
+      "confidence": "high"
+    },
+    {
+      "featureId": "feature-render-all-generated-images-as-static-assets-from-frontend-public-assets-generated-and-reference-them-throughout-the-ui-hero-background-vehicle-cards-about-section",
+      "featureTitle": "Render all generated images as static assets from frontend/public/assets/generated and reference them throughout the UI (hero background, vehicle cards, about section).",
+      "files": [
+        "frontend/src/components/AboutSection.tsx",
+        "frontend/src/components/Hero.tsx",
+        "frontend/src/components/Navbar.tsx",
+        "frontend/src/components/VehicleCard.tsx"
+      ],
+      "components": [
+        "core-infrastructure@1.0.2",
+        "shadcn-ui@1.0.0",
+        "build-template-react@1.0.0",
+        "initial-app@1.0.0",
+        "github-export-icp-cli@1.0.0"
+      ],
+      "testIds": [
+        "REQ-8"
+      ],
+      "confidence": "high"
+    }
+  ]
+}

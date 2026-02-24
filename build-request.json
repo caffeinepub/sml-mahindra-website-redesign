@@ -1,0 +1,164 @@
+{
+  "kind": "build_request",
+  "title": "SML Mahindra Website — Modern Redesign",
+  "projectName": "SML Mahindra",
+  "priority": "normal",
+  "requirements": [
+    {
+      "id": "REQ-1",
+      "text": "Design and implement a bold, modern visual theme across the entire site: dark charcoal/steel base palette with vibrant amber/orange accent color, sharp geometric layout, premium sans-serif typography, smooth scroll animations, and subtle gradient or glassmorphism card effects. Apply the theme consistently on all pages.",
+      "target": "frontend",
+      "source": {
+        "messageIds": [
+          "msg-4"
+        ],
+        "quotes": [
+          "it looks a bit old fashioned so i want you to build it advanced a fresh new look"
+        ]
+      },
+      "acceptanceCriteria": [
+        "A cohesive color palette (dark base + amber accent) is used throughout all sections",
+        "Typography is modern, legible, and consistent across headings and body text",
+        "No outdated design patterns (gradients, drop shadows, or table-based layouts from the early 2000s) are present",
+        "Smooth CSS transitions/animations are applied to interactive elements and section reveals"
+      ]
+    },
+    {
+      "id": "REQ-2",
+      "text": "Build a full-width hero section on the homepage with a large background image/gradient, a bold headline about SML Mahindra's commercial vehicle legacy, a short tagline, and two prominent CTA buttons ('Explore Vehicles' and 'Find a Dealer'). Include an animated navigation bar that becomes opaque on scroll.",
+      "target": "frontend",
+      "source": {
+        "messageIds": [
+          "msg-4"
+        ],
+        "quotes": [
+          "build it advanced a fresh new look"
+        ]
+      },
+      "acceptanceCriteria": [
+        "Hero section spans full viewport width and height",
+        "Two CTA buttons are visible and functional (scroll to relevant sections)",
+        "Navbar is transparent on top, transitions to solid on scroll",
+        "Mobile-responsive hamburger menu is present"
+      ]
+    },
+    {
+      "id": "REQ-3",
+      "text": "Create a vehicle catalog section showcasing SML Mahindra's product lineup (buses, trucks, light commercial vehicles). Display vehicles in a responsive grid of modern cards, each showing a vehicle image, name, category tag, and a 'View Details' button. Clicking a card opens a modal or detail view with key specifications.",
+      "target": "frontend",
+      "source": {
+        "messageIds": [
+          "msg-4"
+        ]
+      },
+      "acceptanceCriteria": [
+        "At least 6 vehicle cards are displayed in a responsive grid (3 columns on desktop, 1-2 on mobile)",
+        "Each card shows image, name, category, and CTA button",
+        "Clicking a card opens a modal/drawer with vehicle specs",
+        "Filter tabs or dropdown allow filtering by vehicle category"
+      ]
+    },
+    {
+      "id": "REQ-4",
+      "text": "Build a dealer/service locator section where users can enter a city or state name to search for nearby dealers. Display results in a styled list with dealer name, address, phone number, and a 'Get Directions' link. Store dealer data (name, city, state, address, phone) in the backend and expose query functions.",
+      "target": "both",
+      "source": {
+        "messageIds": [
+          "msg-4"
+        ]
+      },
+      "acceptanceCriteria": [
+        "Search input accepts city or state text and filters backend dealer records",
+        "Results list updates dynamically based on input",
+        "Each result card shows dealer name, address, phone, and a Google Maps directions link",
+        "At least 10 sample dealer entries are pre-seeded in the backend"
+      ]
+    },
+    {
+      "id": "REQ-5",
+      "text": "Add an 'About Us' section highlighting SML Mahindra's history, key milestones, and values. Use a modern timeline layout for milestones and an icon-grid for core values (e.g., Innovation, Reliability, Service).",
+      "target": "frontend",
+      "source": {
+        "messageIds": [
+          "msg-4"
+        ]
+      },
+      "acceptanceCriteria": [
+        "Timeline of at least 5 company milestones is displayed with year and description",
+        "Core values section uses icons with labels",
+        "Section is visually distinct and uses the global design theme"
+      ]
+    },
+    {
+      "id": "REQ-6",
+      "text": "Implement a Contact & Inquiry form that captures the user's name, email, phone number, subject (dropdown: Sales, Service, Dealership, Other), and message. On submission, store the inquiry in the backend and show a success confirmation toast/message.",
+      "target": "both",
+      "source": {
+        "messageIds": [
+          "msg-4"
+        ]
+      },
+      "acceptanceCriteria": [
+        "All form fields are present and have validation (required fields, email format)",
+        "Submission saves the inquiry to backend stable storage",
+        "A success toast is shown after successful submission",
+        "Form resets after successful submission"
+      ]
+    },
+    {
+      "id": "REQ-7",
+      "text": "Build a sticky footer with SML Mahindra branding, quick navigation links (Home, Vehicles, Dealers, About, Contact), social media icon links, and a copyright notice. Style it with the dark theme and amber accent.",
+      "target": "frontend",
+      "source": {
+        "messageIds": [
+          "msg-4"
+        ]
+      },
+      "acceptanceCriteria": [
+        "Footer is present on all views/sections",
+        "Quick links scroll to the corresponding sections on the single-page layout",
+        "Social media icons are present (LinkedIn, Twitter/X, YouTube as placeholders)",
+        "Copyright line is visible"
+      ]
+    },
+    {
+      "id": "REQ-8",
+      "text": "Render all generated images as static assets from frontend/public/assets/generated and reference them throughout the UI (hero background, vehicle cards, about section).",
+      "target": "frontend",
+      "source": {
+        "messageIds": [
+          "msg-4"
+        ]
+      },
+      "acceptanceCriteria": [
+        "All images load correctly from frontend/public/assets/generated",
+        "No broken image links are present",
+        "Images are appropriately sized and display crisply on retina/HD screens"
+      ]
+    }
+  ],
+  "constraints": [
+    "All backend logic must remain in a single Motoko actor (backend/main.mo)",
+    "Do not edit any files under frontend/src/hooks/ or frontend/src/components/ui",
+    "Do not integrate any external maps API or GPS/geolocation service — use static dealer data with a plain text directions link",
+    "No real-time features (WebSockets) — use standard React Query polling or on-demand fetch"
+  ],
+  "nonGoals": [
+    "E-commerce or vehicle purchase/payment functionality",
+    "User authentication or login system",
+    "Real-time inventory or stock data integration",
+    "Integration with any third-party CRM or ERP system",
+    "Mobile app (React Native or Flutter)"
+  ],
+  "imageRequirements": {
+    "required": [
+      "Wide cinematic shot of a modern SML commercial bus or truck driving on a highway at dusk, dramatic sky, volumetric lighting, photorealistic style (hero-bg.dim_1920x1080.png)",
+      "Clean studio render of a white light commercial vehicle (LCV) on a dark background with subtle reflections (vehicle-lcv.dim_800x500.png)",
+      "Clean studio render of a modern school/staff bus in white and amber livery on dark background (vehicle-bus.dim_800x500.png)",
+      "Clean studio render of a heavy-duty truck in dark metallic finish on dark background (vehicle-truck.dim_800x500.png)",
+      "Abstract dark metallic geometric pattern — subtle texture for section background use (section-bg-texture.dim_1920x600.png)",
+      "Modern SML Mahindra brand logo mark — stylized 'SML' lettermark in amber on dark background (logo-mark.dim_256x256.png)"
+    ],
+    "edits": []
+  }
+}

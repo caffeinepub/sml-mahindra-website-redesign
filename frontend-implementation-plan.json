@@ -1,0 +1,211 @@
+{
+  "kind": "implementation_plan",
+  "version": "1.0",
+  "title": "SML Mahindra Website — Modern Redesign (Frontend)",
+  "requirements": [
+    {
+      "id": "REQ-1",
+      "summary": "Design and implement a bold, modern visual theme across the entire site with dark charcoal/steel base palette, vibrant amber/orange accent, sharp geometric layout, premium sans-serif typography, smooth scroll animations, and subtle gradient or glassmorphism card effects.",
+      "acceptanceCriteria": [
+        "A cohesive color palette (dark base + amber accent) is used throughout all sections",
+        "Typography is modern, legible, and consistent across headings and body text",
+        "No outdated design patterns (gradients, drop shadows, or table-based layouts from the early 2000s) are present",
+        "Smooth CSS transitions/animations are applied to interactive elements and section reveals"
+      ],
+      "file_operations": [
+        {
+          "path": "frontend/tailwind.config.js",
+          "operation": "modify",
+          "description": "Extend the Tailwind theme with the dark charcoal/steel base palette (e.g., neutral-900, slate-800) and vibrant amber/orange accent colors (e.g., amber-500, orange-600). Add custom animation configurations for smooth scroll reveals and transitions."
+        },
+        {
+          "path": "frontend/src/index.css",
+          "operation": "modify",
+          "description": "Apply global typography using a premium sans-serif font stack (e.g., Inter, system-ui). Set base text color to light gray on dark background. Add CSS custom properties for the color palette. Include smooth scroll behavior and subtle glassmorphism/gradient utilities for card effects."
+        }
+      ]
+    },
+    {
+      "id": "REQ-2",
+      "summary": "Build a full-width hero section on the homepage with a large background image, bold headline about SML Mahindra's commercial vehicle legacy, a short tagline, two prominent CTA buttons, and an animated navigation bar that becomes opaque on scroll.",
+      "acceptanceCriteria": [
+        "Hero section spans full viewport width and height",
+        "Two CTA buttons are visible and functional (scroll to relevant sections)",
+        "Navbar is transparent on top, transitions to solid on scroll",
+        "Mobile-responsive hamburger menu is present"
+      ],
+      "file_operations": [
+        {
+          "path": "frontend/src/components/Hero.tsx",
+          "operation": "create",
+          "description": "Create a Hero component with a full-width, full-height container. Use the generated image frontend/public/assets/generated/hero-bg.dim_1920x1080.png as the background. Display a bold headline, short tagline, and two CTA buttons ('Explore Vehicles' and 'Find a Dealer') that scroll to their respective sections. Apply dark overlay and modern typography."
+        },
+        {
+          "path": "frontend/src/components/Navbar.tsx",
+          "operation": "create",
+          "description": "Create a Navbar component that is transparent by default and transitions to a solid dark background with glassmorphism on scroll. Include navigation links (Home, Vehicles, Dealers, About, Contact) that scroll to sections. Add a mobile-responsive hamburger menu. Use frontend/public/assets/generated/logo-mark.dim_256x256.png as the brand logo."
+        },
+        {
+          "path": "frontend/src/App.tsx",
+          "operation": "modify",
+          "description": "Import and render the Navbar and Hero components at the top of the single-page layout. Ensure Navbar is sticky/fixed and Hero is the first section below it."
+        }
+      ]
+    },
+    {
+      "id": "REQ-3",
+      "summary": "Create a vehicle catalog section showcasing SML Mahindra's product lineup with a responsive grid of modern cards, each showing a vehicle image, name, category tag, and a 'View Details' button. Clicking a card opens a modal or detail view with key specifications.",
+      "acceptanceCriteria": [
+        "At least 6 vehicle cards are displayed in a responsive grid (3 columns on desktop, 1-2 on mobile)",
+        "Each card shows image, name, category, and CTA button",
+        "Clicking a card opens a modal/drawer with vehicle specs",
+        "Filter tabs or dropdown allow filtering by vehicle category"
+      ],
+      "file_operations": [
+        {
+          "path": "frontend/src/components/VehicleCard.tsx",
+          "operation": "create",
+          "description": "Create a VehicleCard component that displays a vehicle image (use generated images: frontend/public/assets/generated/vehicle-lcv.dim_800x500.png, frontend/public/assets/generated/vehicle-bus.dim_800x500.png, frontend/public/assets/generated/vehicle-truck.dim_800x500.png), vehicle name, category tag (styled badge), and a 'View Details' button. Apply glassmorphism card styling with hover effects. On button click, trigger a callback to open the detail modal."
+        },
+        {
+          "path": "frontend/src/components/VehicleDetailModal.tsx",
+          "operation": "create",
+          "description": "Create a VehicleDetailModal component (using shadcn/ui Dialog or Sheet) that displays full vehicle specifications (name, category, engine details, dimensions, payload capacity, fuel type, etc.). Accept a vehicle object as a prop and render it in a modern card layout with the vehicle image and specs grid. Include a close button."
+        },
+        {
+          "path": "frontend/src/components/VehicleCatalog.tsx",
+          "operation": "create",
+          "description": "Create a VehicleCatalog section component that renders a responsive grid (3 columns on desktop, 2 on tablet, 1 on mobile) of VehicleCard components. Maintain local state for the list of vehicles (at least 6 sample entries covering buses, trucks, LCVs) and the selected vehicle for the modal. Include filter tabs or a dropdown above the grid to filter by category (All, Buses, Trucks, LCVs). Manage modal open/close state and pass the selected vehicle to VehicleDetailModal."
+        },
+        {
+          "path": "frontend/src/App.tsx",
+          "operation": "modify",
+          "description": "Import and render the VehicleCatalog component as a section below the Hero. Ensure it has a section ID ('vehicles') for scroll navigation from the Hero CTA and Navbar links."
+        }
+      ]
+    },
+    {
+      "id": "REQ-4",
+      "summary": "Build a dealer/service locator section where users can search for nearby dealers by city or state. Display results in a styled list with dealer name, address, phone number, and a 'Get Directions' link. Query backend dealer data.",
+      "acceptanceCriteria": [
+        "Search input accepts city or state text and filters backend dealer records",
+        "Results list updates dynamically based on input",
+        "Each result card shows dealer name, address, phone, and a Google Maps directions link",
+        "At least 10 sample dealer entries are pre-seeded in the backend"
+      ],
+      "file_operations": [
+        {
+          "path": "frontend/src/components/DealerCard.tsx",
+          "operation": "create",
+          "description": "Create a DealerCard component that displays dealer name, city, state, address, phone number, and a 'Get Directions' link (constructed as a Google Maps search URL using the address). Style the card with dark theme, subtle borders, and amber accent on hover."
+        },
+        {
+          "path": "frontend/src/components/DealerLocator.tsx",
+          "operation": "create",
+          "description": "Create a DealerLocator section component with a search input (placeholder: 'Enter city or state') and a results list container. Use React Query to fetch dealers from the backend (getAllDealers on mount, then filter locally by city/state, or call getDealersByCity/getDealersByState based on input). Render DealerCard components for each result. Show a loading state and empty state ('No dealers found') as needed."
+        },
+        {
+          "path": "frontend/src/App.tsx",
+          "operation": "modify",
+          "description": "Import and render the DealerLocator component as a section below VehicleCatalog. Assign it a section ID ('dealers') for scroll navigation from the Hero CTA and Navbar links."
+        }
+      ]
+    },
+    {
+      "id": "REQ-5",
+      "summary": "Add an 'About Us' section highlighting SML Mahindra's history, key milestones, and values using a modern timeline layout for milestones and an icon-grid for core values.",
+      "acceptanceCriteria": [
+        "Timeline of at least 5 company milestones is displayed with year and description",
+        "Core values section uses icons with labels",
+        "Section is visually distinct and uses the global design theme"
+      ],
+      "file_operations": [
+        {
+          "path": "frontend/src/components/AboutSection.tsx",
+          "operation": "create",
+          "description": "Create an AboutSection component with two subsections: a timeline of at least 5 company milestones (year and description) styled with a vertical or horizontal line connecting milestone nodes, and a core values grid displaying icons with labels (e.g., Innovation, Reliability, Service). Use the generated image frontend/public/assets/generated/section-bg-texture.dim_1920x600.png as a subtle background texture. Apply dark theme and amber accents."
+        },
+        {
+          "path": "frontend/src/App.tsx",
+          "operation": "modify",
+          "description": "Import and render the AboutSection component as a section below DealerLocator. Assign it a section ID ('about') for scroll navigation from the Navbar links."
+        }
+      ]
+    },
+    {
+      "id": "REQ-6",
+      "summary": "Implement a Contact & Inquiry form that captures user details (name, email, phone, subject, message), stores the inquiry in the backend, and shows a success confirmation toast.",
+      "acceptanceCriteria": [
+        "All form fields are present and have validation (required fields, email format)",
+        "Submission saves the inquiry to backend stable storage",
+        "A success toast is shown after successful submission",
+        "Form resets after successful submission"
+      ],
+      "file_operations": [
+        {
+          "path": "frontend/src/components/ContactForm.tsx",
+          "operation": "create",
+          "description": "Create a ContactForm component with input fields for name, email, phone, subject (dropdown: Sales, Service, Dealership, Other), and message (textarea). Use React Hook Form for validation (required fields, email format). On submit, call the backend submitInquiry method using React Query mutation. On success, display a toast notification (using shadcn/ui Toast) and reset the form. On error, show an error toast."
+        },
+        {
+          "path": "frontend/src/App.tsx",
+          "operation": "modify",
+          "description": "Import and render the ContactForm component as a section below AboutSection. Assign it a section ID ('contact') for scroll navigation from the Navbar links."
+        }
+      ]
+    },
+    {
+      "id": "REQ-7",
+      "summary": "Build a sticky footer with SML Mahindra branding, quick navigation links, social media icon links, and a copyright notice styled with the dark theme and amber accent.",
+      "acceptanceCriteria": [
+        "Footer is present on all views/sections",
+        "Quick links scroll to the corresponding sections on the single-page layout",
+        "Social media icons are present (LinkedIn, Twitter/X, YouTube as placeholders)",
+        "Copyright line is visible"
+      ],
+      "file_operations": [
+        {
+          "path": "frontend/src/components/Footer.tsx",
+          "operation": "create",
+          "description": "Create a Footer component with the SML Mahindra brand name (or logo mark from frontend/public/assets/generated/logo-mark.dim_256x256.png), quick navigation links (Home, Vehicles, Dealers, About, Contact) that scroll to section IDs, social media icon placeholders (LinkedIn, Twitter/X, YouTube), and a copyright notice. Style it with dark background, light text, and amber accent on hover. Ensure it is sticky at the bottom of the page."
+        },
+        {
+          "path": "frontend/src/App.tsx",
+          "operation": "modify",
+          "description": "Import and render the Footer component at the bottom of the single-page layout, below all sections."
+        }
+      ]
+    },
+    {
+      "id": "REQ-8",
+      "summary": "Render all generated images as static assets from frontend/public/assets/generated and reference them throughout the UI (hero background, vehicle cards, about section).",
+      "acceptanceCriteria": [
+        "All images load correctly from frontend/public/assets/generated",
+        "No broken image links are present",
+        "Images are appropriately sized and display crisply on retina/HD screens"
+      ],
+      "file_operations": [
+        {
+          "path": "frontend/src/components/Hero.tsx",
+          "operation": "modify",
+          "description": "Verify that the Hero component references the generated hero background image frontend/public/assets/generated/hero-bg.dim_1920x1080.png as a background-image or img src. Ensure the path is correct and the image loads without errors."
+        },
+        {
+          "path": "frontend/src/components/VehicleCard.tsx",
+          "operation": "modify",
+          "description": "Verify that VehicleCard components reference the generated vehicle images (frontend/public/assets/generated/vehicle-lcv.dim_800x500.png, frontend/public/assets/generated/vehicle-bus.dim_800x500.png, frontend/public/assets/generated/vehicle-truck.dim_800x500.png) in their image src attributes. Ensure images are sized appropriately and load crisply on HD screens."
+        },
+        {
+          "path": "frontend/src/components/AboutSection.tsx",
+          "operation": "modify",
+          "description": "Verify that the AboutSection component references the generated section background texture image frontend/public/assets/generated/section-bg-texture.dim_1920x600.png as a background or decorative element. Ensure the image loads correctly."
+        },
+        {
+          "path": "frontend/src/components/Navbar.tsx",
+          "operation": "modify",
+          "description": "Verify that the Navbar component references the generated logo mark image frontend/public/assets/generated/logo-mark.dim_256x256.png as the brand logo. Ensure the image is sized appropriately and loads without errors."
+        }
+      ]
+    }
+  ]
+}
